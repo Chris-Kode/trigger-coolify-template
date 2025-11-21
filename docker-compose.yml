@@ -78,8 +78,8 @@ services:
         max-size: "${LOGGING_MAX_SIZE:-20m}"
         max-file: "${LOGGING_MAX_FILES:-5}"
         compress: "${LOGGING_COMPRESS:-true}"
-    ports:
-      - "5433:5432"
+    #ports:
+    #  - "5433:5432"
     volumes:
       - "postgres-data:/var/lib/postgresql/data/"
     networks:
@@ -108,8 +108,8 @@ services:
         max-size: "${LOGGING_MAX_SIZE:-20m}"
         max-file: "${LOGGING_MAX_FILES:-5}"
         compress: "${LOGGING_COMPRESS:-true}"
-    ports:
-      - "6389:6379"
+    #ports:
+    #  - "6389:6379"
     volumes:
       - "redis:/data"
     networks:
@@ -159,9 +159,9 @@ services:
         max-size: "${LOGGING_MAX_SIZE:-20m}"
         max-file: "${LOGGING_MAX_FILES:-5}"
         compress: "${LOGGING_COMPRESS:-true}"
-    ports:
-      - "9123:8123"
-      - "9090:9000"
+    #ports:
+    #  - "9123:8123"
+    #  - "9090:9000"
     environment:
       CLICKHOUSE_USER: "${SERVICE_USER_CLICKHOUSE}"
       CLICKHOUSE_PASSWORD: "${SERVICE_PASSWORD_CLICKHOUSE}"
@@ -196,8 +196,8 @@ services:
         max-size: "${LOGGING_MAX_SIZE:-20m}"
         max-file: "${LOGGING_MAX_FILES:-5}"
         compress: "${LOGGING_COMPRESS:-true}"
-    ports:
-      - "5000:5000"
+    #ports:
+    # - "5000:5000"
     networks:
       - webapp
     volumes:
@@ -226,9 +226,10 @@ services:
         max-size: "${LOGGING_MAX_SIZE:-20m}"
         max-file: "${LOGGING_MAX_FILES:-5}"
         compress: "${LOGGING_COMPRESS:-true}"
-    ports:
-      - "9000:9000"
-      - "9001:9001"
+    #ports:
+    # - "9000:9000"
+    # UI uncomment this when using UI
+    #  - "9001:9001"
     networks:
       - webapp
     volumes:

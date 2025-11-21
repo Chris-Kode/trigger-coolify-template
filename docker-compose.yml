@@ -111,7 +111,7 @@ services:
     ports:
       - "6389:6379"
     volumes:
-      - "redis:/data"
+      - "redis-data:/data"
     networks:
       - webapp
     healthcheck:
@@ -327,7 +327,7 @@ services:
 volumes:
   clickhouse-data: null
   postgres-data: null
-  redis: null
+  redis-data: null
   shared-data: null
   minio-data: null
   registryauth-data: null
